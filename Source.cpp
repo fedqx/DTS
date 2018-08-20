@@ -18,7 +18,8 @@ Copyright (C) 2018  Mehmet ÖZGÜN
 #include <string>
 #include <vector>
 #include <conio.h>
-#define print(x) std::cout << x << std::endl
+#define print(x) std::cout << "\t\t\t" << x << "\n" << std::endl
+#define printn(x) std::cout << x << std::endl
 #define input(x) std::cin >> x
 #define pause system("pause")
 #define clearscreen system("cls")
@@ -130,9 +131,9 @@ bool login()
 {
 	short a;
 	short b;
-	
+
 	lstart:
-	print("-----Welcome to DTS(Disease Tracking System). Please login with the password your local hospital gave you------");
+	printn("-----Welcome to DTS(Disease Tracking System). Please login with the password your local hospital gave you------");
 	input(a);
 
 	ifstream yukle;
@@ -142,7 +143,7 @@ bool login()
 	yukle.close();
 	if (b == a)
 	{
-		print("Enter your city id:");
+		printn("Enter your city id:");
 		input(cityid);
 
 		return true;
@@ -151,7 +152,7 @@ bool login()
 	else if (b != a)
 	{
 		
-		print("incorrect password !");
+		printn("incorrect password !");
 		pause;
 		system("cls");
 		goto lstart;
@@ -168,6 +169,8 @@ void mainmenu()
 	print("Press 'S' Show diseases in current city");
 	print("Press 'Q' to exit the program");
 	print("Press 'R' to re-enter the city id");
+	print("Press 'C' to credits");
+
 	/// would you like to use number or character mode ?
 
 		switch (_getch())
@@ -187,7 +190,11 @@ void mainmenu()
 			print("Enter your city id:");
 			input(cityid);
 		} break;
-
+		case 'c':
+		{
+			print("Copyright (C) 2018 Mehmet ÖZGÜN (Mehmet OZGUN)");
+			pause;
+		} break;
 		} // switch
 	
 	
@@ -210,4 +217,3 @@ int main()
 
 
 }
-
