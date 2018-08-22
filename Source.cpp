@@ -117,13 +117,7 @@ void showdisease(v cid)
 		} break;
 		} // switch
 		
-	} while (!breakloop);
-	if (_kbhit())
-	{
-
-	
-	}
-	
+	} while (!breakloop);	
 
 }
 
